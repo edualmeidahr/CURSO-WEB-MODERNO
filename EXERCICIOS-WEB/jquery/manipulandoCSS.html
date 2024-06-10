@@ -15,6 +15,22 @@
     <div id='div3'>3</div>
     <div id='resultado'></div>
     <script>
-        // ...
+        const fonte = $('#div1').css('font-family')
+        $('#resultado').append(`Fonte é ${fonte}`)
+
+        $('#div1').css('font-size', '3em')
+        $('#div1').css({'font-size': '3.5em', 'color': 'yellow' })
+        $('#div1').css('font-size', function() {
+            return `${2 * 2}em`
+        })
+
+        $('#div2').addClass('destaque')
+
+        const temClasse = $('#div2').hasClass('destaque')  // hasClass() returns a boolean
+        $('#resultado').append(`<br>Tem class? ${temClasse}`) // append() adds content to the end of the selected elements
+
+        $('#div2').removeClass('destaque') // removeClass() removes one or more classes from the selected elements
+        $('#div2').toggleClass('destaque') // toggleClass() adds or removes one or more classes from the selected elements, depending on whether the class is present or not
+        $('#div2').toggleClass('destaque')
     </script>
 </body>

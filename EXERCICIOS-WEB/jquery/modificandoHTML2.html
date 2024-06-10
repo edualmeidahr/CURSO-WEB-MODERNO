@@ -17,6 +17,24 @@
     <p class='numero'>5</p>
 
     <script>
-        // ...
+        $('#div1').append(', 2')
+        $('#div1').prepend('0, ')
+
+        $('<span>, 3</span>').appendTo('#div1') // O método appendTo() insere o conteúdo no final do elemento
+        $('<span>-1, </span>').prependTo('#div1') // O método prependTo() insere o conteúdo no início do elemento
+
+        $('#div2').before('<p>Antes 2</p>') // O método before() insere o conteúdo antes do elemento
+        $('#div2').after('<p>Depois 2</p>') // O método after() insere o conteúdo depois do elemento
+
+        $('<p>Antes 3</p>').insertBefore('#div3') // O método insertBefore() insere o conteúdo antes do elemento
+        $('<p>Depois 3</p>').insertAfter('#div3') // O método insertAfter() insere o conteúdo depois do elemento
+
+        // $('p.numero').wrap('<div>') // O método wrap() envolve o elemento com a tag especificada
+        $('p.numero').wrapAll('<div id="div4">') // O método wrapAll() envolve todos os elementos com a tag especificada
+        $('#div4').empty() // O método empty() remove o conteúdo do elemento
+        $('#div3, #div4').prev().remove() // O método prev() seleciona o elemento anterior e o método remove() remove o elemento
+
+        // $('<div>Substituto</div>').replaceAll('body > p') // O método replaceAll() substitui os elementos selecionados
+        $('body > p').replaceWith('<div>Substituto</div>') // O método replaceWith() substitui os elementos selecionados
     </script>
 </body>
